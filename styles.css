@@ -96,8 +96,10 @@ h2 {
 /* Hero */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Senegalese%20Thieboudienne.JPG') center/cover no-repeat;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(232, 163, 61, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(192, 57, 43, 0.45), transparent 50%),
+    linear-gradient(135deg, #2b1810, #1f1a17 60%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,11 +138,35 @@ h2 {
 
 .menu-card:hover { transform: translateY(-6px); }
 
-.menu-card img {
+.dish-visual {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+.dish-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 60%);
+}
+
+.dish-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+  z-index: 1;
+}
+
+.dish-thieb   { background: linear-gradient(135deg, #e8a33d, #c0392b); }
+.dish-yassa   { background: linear-gradient(135deg, #f4c542, #d68910); }
+.dish-mafe    { background: linear-gradient(135deg, #a0522d, #6e3a1f); }
+.dish-pastels { background: linear-gradient(135deg, #d4a373, #8a5a2b); }
+.dish-accara  { background: linear-gradient(135deg, #c89b3c, #7a5230); }
+.dish-bissap  { background: linear-gradient(135deg, #c0392b, #6e1f1a); }
 
 .menu-card-body { padding: 1.2rem; }
 
@@ -166,12 +192,29 @@ h2 {
   gap: 1rem;
 }
 
-.gallery-grid img {
-  width: 100%;
+.gallery-tile {
   height: 200px;
-  object-fit: cover;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
+
+.gallery-tile span {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.tile-1 { background: linear-gradient(135deg, #c0392b, #8a2a20); }
+.tile-2 { background: linear-gradient(135deg, #e8a33d, #b97a1f); }
+.tile-3 { background: linear-gradient(135deg, #6e3a1f, #3e2010); }
+.tile-4 { background: linear-gradient(135deg, #d68910, #a05a05); }
+.tile-5 { background: linear-gradient(135deg, #8a2a20, #c0392b); }
+.tile-6 { background: linear-gradient(135deg, #a0522d, #d4a373); }
 
 /* About */
 .about {
